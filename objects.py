@@ -26,11 +26,16 @@ class Block(Object):
 
 class WaterBlock(Block):
     def __init__(self, x, y, size, image):
-        Object.__init__(self, x, y, size, size)
+        super().__init__(x, y, size)
         self.is_water = True
+        self.original_y = y
         self.rect = pygame.Rect(x, y + size // 4, size, size // 4) #nižši vyška vody než bloku
         water_image = pygame.transform.scale(image, (size, size))
         self.image = water_image
+
+    def draw(self, surface, offset_x):
+        # Draw at the original position, not the rect position
+        surface.blit(self.image, (self.rect.x - offset_x, self.original_y))
 
 class Door(Object):
     def __init__(self, x, y, size):

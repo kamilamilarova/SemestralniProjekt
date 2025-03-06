@@ -2,6 +2,10 @@ import pygame
 from os import listdir
 from os.path import isfile, join
 
+def load_level(level_number):
+    with open(f"levels/level_{level_number}.txt", 'r') as file:
+        return [line.strip() for line in file.readlines()]
+    
 def flip(images): #převrácení obrázků
     return [pygame.transform.flip(image, True, False) for image in images]
 

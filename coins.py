@@ -28,30 +28,3 @@ class Coin(pygame.sprite.Sprite):
         if not self.collected:
             window.blit(self.image, (self.rect.x - offset_x, self.rect.y))
 
-def spawn_coins(num_coins, objects, block_size, last_platform_x):
-    coins = [] #seznam mincí
-    min_spacing = 100
-    max_x = last_platform_x  # dveře jako hranice pro mince
-    
-    for _ in range(num_coins):
-        while True:
-            x = random.randint(block_size * 2, max_x - block_size)  # mince se mohou objevit pouze mezi první a poslední platformou
-            y = random.randint(HEIGHT // 2, HEIGHT - block_size * 2) # mince se mohou objevit pouze mezi polovinou obrazovky a zemí
-            valid_position = True
-            
-            for coin in coins: #kontrola jestli se mince nepřekrývají
-                if abs(coin.rect.x - x) < min_spacing and abs(coin.rect.y - y) < min_spacing:
-                    valid_position = False
-                    break
-            
-            test_rect = pygame.Rect(x, y, 40, 40) #kontrola jestli neni mince uprostřed bloku
-            for obj in objects:
-                if test_rect.colliderect(obj.rect):
-                    valid_position = False
-                    break
-            
-            if valid_position: #pokud je pozice mince v poradku, vytvoří se mince
-                coins.append(Coin(x, y))
-                break
-    
-    return coins

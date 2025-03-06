@@ -6,7 +6,7 @@ class Enemy(pygame.sprite.Sprite):
     def __init__(self, x, y, width, platform_start, platform_end):
         super().__init__()
         # animace nepritele
-        self.walk_right = load_images("dog", "Walk", scale_factor=0.15)
+        self.walk_right = load_images("dog", "Walk", scale_factor=0.20)
         self.walk_left = flip(self.walk_right)
         
         #nastaveni vzhledu
