@@ -30,7 +30,7 @@ pip install pygame
 │── enemy.py         # Nepřátelé a jejich pohyb
 │── settings.py      # Nastavení hry
 │── windows.py       # Správa herního okna
-│── assets/          # Sprity a obrázky
+│── assets/          # Obrázky a sprity
 │── README.md
 ```
 
@@ -44,5 +44,11 @@ pip install pygame
 - Přidání nových typů nepřátel.
 - Implementace více úrovní s různými obtížnostmi.
 - Vylepšení vizuálních efektů a zvukových efektů.
+
+## Zdroje assetů a hudby
+- 8 Bit Retro Game Music - Autor: Moodmode, Zdroj: https://pixabay.com
+- Cartoon Buttons Pack - Autor: Prinbles, Zdroj: https://prinbles.itch.io/cartoon-buttons-pack-i
+- Cat & Dog- free sprits, Zdroj: https://www.gameart2d.com/cat-and-dog-free-sprites.html
+- Free platformer game tileset, Zdroj: https://www.gameart2d.com/free-platformer-game-tileset.html
 
 Created By @Kamila Milarova
